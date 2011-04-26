@@ -16,6 +16,7 @@ Schema : DES V1.0
    <navigator> DigitalHuman - Integrative Biomedicine </navigator>
 </title>
 
+<?path C:\Users\Drew\Desktop\Loop_Model\ ?>
 <?include Structure\Structure.DES ?>
 
 <math>

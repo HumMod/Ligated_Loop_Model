@@ -16,7 +16,7 @@ Schema : DES V1.0
   <var><name> Alpha </name></var>
   <parm><name> A </name><val> .0058 </val></parm>
   <parm><name> S </name><val> .45 </val></parm>
-  <parm><name> n </name><val> .94 </val></parm>
+  <parm><name> n </name><val> .94 </val></parm><!-- fit from berkeley madonna -->
   <parm><name> c </name><val> .0029  </val></parm>
 
   <var><name> Active </name></var>

@@ -18,7 +18,7 @@ Schema : DES V1.0
   <parm><name> A </name><val> .0179 </val></parm>.0193
   <parm><name> S </name><val> .45 </val></parm>.84
   <parm><name> n </name><val> .94 </val></parm>
-  <parm><name> c </name><val> .0029  </val></parm>
+  <parm><name> c </name><val> .0029  </val></parm> <!-- fit from berkeley madonna -->
 
 <!-- Total effect -->
   <var><name> Absorption </name></var>
@@ -61,32 +61,14 @@ Schema : DES V1.0
  <def><name> Alpha </name><val> A * Loop.Mult </val></def>
 <def><name> Active </name><val> Alpha * ( S ^ n ) / ( ( Mass ^ n ) + ( S ^ n ) ) </val></def>
 
-
-
    <def>
 	<name> Absorption </name> 
 	<val> Mass * ( c + Active ) </val>
    </def>
 
- <if>
-  <test> Mass GT .0001 </test>
-  <true>
-   <def>
-	<name> Out </name>
-	<val> Washout * Mass </val>
-   </def>
-  </true>
-  <false>
-   <def><name> Out </name><val> 0 </val></def>
-  </false>
- </if>
-
-
-
-
    <def>
 	<name> Change </name>
-	<val> Stomach.ToDuod - Absorption - Out </val>
+	<val>  - Absorption </val>
    </def>
 
  <if>

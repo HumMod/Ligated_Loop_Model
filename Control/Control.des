@@ -10,7 +10,7 @@ Schema : 2005.0
 
 <control>
 
-<?path LigatedLoopModel\Control ?>
+<?path Control ?>
 
 <?include GoFor.DES ?>
 

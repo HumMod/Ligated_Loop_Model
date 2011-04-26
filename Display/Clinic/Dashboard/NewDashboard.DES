@@ -23,12 +23,12 @@ Solver : Digital Human (V1.0)
   <row> 0.5 </row><col> 1.0 </col>
 </showpanelname>
 
-<?path LigatedLoopModel\Display\Clinic\Dashboard\ ?>
+<?path Display\Clinic\Dashboard\ ?>
 
 
 <?include NewGut.DES ?>
 <?include NewAUC.DES ?>
-
+<?include Loop.DES ?>
 
 </panel>
 

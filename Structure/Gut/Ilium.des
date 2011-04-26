@@ -37,24 +37,13 @@ Schema : DES V1.0
 
 </equations>
 
-
 <definitions>
 
  <block>
  <name>Dervs </name>
 
-
-
-   <def>
-	<name> Absorption </name> 
-	<val> Mass * c </val>
-   </def>
-
-
-   <def>
-	<name> Change </name>
-	<val> - Absorption </val>
-   </def>
+   <def><name> Absorption </name><val> Mass * c </val></def>
+   <def><name> Change </name><val> - Absorption </val></def>
 
  <if>
  <test> Loop.TestLoad GT 0 </test>

@@ -6,7 +6,7 @@ Author : Tom Coleman
 Copyright : 2008-2010
 By : University of Mississippi Medical Center
 
-<?path LigatedLoopModel\Structure ?>
+<?path C:\Users\Drew\Desktop\Loop_Model\Structure ?>
 
 <?include Gut\TalmageSimpleGut.DES ?>
 <?include Gut\Loop.DES ?>

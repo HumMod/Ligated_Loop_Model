@@ -7,7 +7,7 @@ Copyright : 2011-2011
 By : University of Mississippi Medical Center
 Schema : DES V1.0
 
-<?path LigatedLoopModel\Display\Physiology\ ?>
+<?path Display\Physiology\ ?>
 
 
 <?include Vitamin D\TalmageVitD Panel.DES ?>

@@ -10,7 +10,7 @@ Solver : Digital Human (V1.0)
 <groupbox>
    <row> 2.0 </row>
    <col> 1.0 </col>
-   <high> 26.5 </high>
+   <high> 18.5 </high>
    <wide> 45.0 </wide>
    <title> Gut Overview </title>
 
@@ -35,27 +35,18 @@ Solver : Digital Human (V1.0)
  <showvalue>
    <row> 3 </row><col> 1.0 </col>
 
-   <name> Jejunum.Mass9 </name>
+   <name> Jejunum.Mass </name>
    <format><decimal> 4 </decimal></format>
-   <label> j mass9 </label>
+   <label> j mass </label>
 
  </showvalue>
 
 
  <showvalue>
    <row> 4 </row><col> 1.0 </col>
-   <name> Jejunum.Active9 </name>
+   <name> Ilium.Mass </name>
    <format><decimal> 4 </decimal></format>
-   <label> active9 </label>
- </showvalue>
-
-
-
- <showvalue>
-   <row> 5 </row><col> 1.0 </col>
-   <name> Jejunum.Absorption9 </name>
-   <format><decimal> 4 </decimal></format>
-   <label> abs9 </label>
+   <label> ilium Mass </label>
  </showvalue>
 
  <showgraph>
@@ -79,7 +70,7 @@ Solver : Digital Human (V1.0)
       <label> ilium mass </label>
       <linecolor> RED </linecolor>
     </yvar>
-
+  <scale><min>0</min><max>1</max></scale>
 </yaxis>
 </showgraph>
 
