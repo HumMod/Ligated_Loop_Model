@@ -14,10 +14,10 @@ Schema : DES V1.0
 <!-- active factors -->
   <var><name> AbsFrac </name></var>
   <var><name> Alpha </name></var>
-  <parm><name> A </name><val> .0058 </val></parm>
-  <parm><name> S </name><val> .45 </val></parm>
-  <parm><name> n </name><val> .94 </val></parm><!-- fit from berkeley madonna -->
-  <parm><name> c </name><val> .0029  </val></parm>
+  <parm><name> A </name><val> .0014 </val></parm>
+  <parm><name> S </name><val> .9 </val></parm>
+  <parm><name> n </name><val> 1 </val></parm><!-- fit from berkeley madonna -->
+  <parm><name> c </name><val> .0031  </val></parm>
 
   <var><name> Active </name></var>
   <var><name> Absorption </name></var>
@@ -36,6 +36,14 @@ Schema : DES V1.0
      <errorlim> .0001 </errorlim>
  </diffeq>
 
+  <diffeq>
+  <name> H2OMass </name>  
+     <integralname> H2OMass </integralname>
+     <initialval> 1 </initialval>
+     <dervname> H2OChange </dervname>
+     <errorlim> .0001 </errorlim>
+ </diffeq>
+
 </equations>
 
 
@@ -45,19 +53,16 @@ Schema : DES V1.0
  <name>Dervs </name>
 
 <def><name> Alpha </name><val> A * Loop.Mult </val></def>
- <def><name> Active </name><val> Alpha * ( S ^ n ) / ( ( Mass ^ n ) + ( S ^ n ) ) </val></def>
+ <def><name> Active </name><val> Alpha * ( ( Mass / H2OMass ) ^ n ) / ( ( ( Mass / H2OMass ) ^ n ) + ( S ^ n ) ) </val></def>
 
    <def>
 	<name> Absorption </name> 
-	<val> Mass * ( c + Active ) </val>
+	<val> Mass * c + Active </val>
    </def>
 
 
-   <def>
-	<name> Change </name>
-	<val> - Absorption </val>
-   </def>
-
+   <def><name> Change </name><val> - Absorption </val></def>
+   <def><name> H2OChange </name><val> - c * H2OMass </val></def>
  <if>
  <test> Loop.TestLoad GT 0 </test>
    <true>

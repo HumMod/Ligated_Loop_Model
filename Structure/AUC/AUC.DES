@@ -42,6 +42,14 @@ Schema : DES V1.0
    <errorlim> 0.0001 </errorlim>
  </diffeq>
 
+ <diffeq>
+   <name> AUCActiveDuodAbs </name>
+   <integralname> AUCActiveDuodAbs </integralname>
+   <initialval> 0 </initialval>
+   <dervname> ChangeActiveDuod </dervname>
+   <errorlim> 0.0001 </errorlim>
+ </diffeq>
+
 </equations>
 
 <definitions>
@@ -63,6 +71,7 @@ Schema : DES V1.0
  <def><name> ChangeDuodAbsorption </name><val> TestAUC * Duodenum.Absorption </val></def> 
  <def><name> ChangeIliumAbs </name><val> TestAUC * Ilium.Absorption </val></def> 
  <def><name> ChangeJejunumAbs</name><val> TestAUC * Jejunum.Absorption </val></def> 
+ <def><name> ChangeActiveDuod </name><val> TestAUC * Duodenum.Active </val></def> 
 
 
 

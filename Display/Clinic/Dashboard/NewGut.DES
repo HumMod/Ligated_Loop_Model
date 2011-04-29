@@ -56,7 +56,7 @@ Solver : Digital Human (V1.0)
   <xaxis>
      <name> System.X </name>
      <label> Time </label>
-     <scale><min> 0 </min><max> 360 </max></scale>
+     <scale><min> 0 </min><max> 240 </max></scale>
   </xaxis>
   <yaxis>
   <yvar>

@@ -45,6 +45,13 @@ Solver : Digital Human (V1.0)
    <label> Ileum absorption </label>
  </showvalue>
 
+ <showvalue>
+   <row> 8.5 </row><col> 1.0 </col>
+   <name> AUC.AUCActiveDuodAbs </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Active duod absorption </label>
+ </showvalue>
+
 
 </groupbox>
 
