@@ -1,0 +1,27 @@
+HumMod / GoFor
+
+   Created : 12-Mar-07
+   Last Modified : 2010-05-28
+   Author : Tom Coleman
+   Copyright : 2006-2010
+   By : University of Mississippi Medical Center
+
+<gofor>
+  <solutionint> 60 </solutionint>
+  <displayint> 1 </displayint>
+  <menuitem> 1 Hour </menuitem>
+</gofor>
+
+<gofor>
+  <solutionint> 150 </solutionint>
+  <displayint> 1 </displayint>
+  <menuitem> 2.5 Hours </menuitem>
+</gofor>
+
+<gofor>
+  <solutionint> 240 </solutionint>
+  <displayint> 1 </displayint>
+  <menuitem> 4 Hours </menuitem>
+</gofor>
+
+End         
