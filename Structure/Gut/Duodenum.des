@@ -1,0 +1,76 @@
+ HumMod / Gut
+
+Created : 27-Oct-10
+Last Modified : 19-apr-11
+Author : W Pruett
+Copyright : 2010-2011//
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+   
+<structure><name> Duodenum </name>
+
+<variables>
+
+  <var><name> AbsFrac </name></var>
+  <var><name> Alpha </name></var>
+  <parm><name> DuodMult </name><val>1</val></parm>
+  <parm><name> A </name><val> .0033 </val></parm>.0193
+  <parm><name> b </name><val> .04 </val></parm>
+  <parm><name> c </name><val> .00300  </val></parm> <!-- fit from berkeley madonna -->
+  <var><name> Absorption </name></var>
+  <var><name> FracMass </name></var>
+  <var><name> Abs </name></var>
+  <var><name> Abs% </name></var>
+  <var><name> Active </name></var>
+
+</variables>
+
+<equations>
+ <diffeq>
+  <name> Mass </name>  
+     <integralname> Mass </integralname>
+     <initialval> 0 </initialval>
+     <dervname> Change </dervname>
+     <errorlim> .000001 </errorlim>
+ </diffeq>
+</equations>
+
+
+<definitions>
+
+ <block>
+ <name>Dervs </name>
+ 
+ <def><name> Alpha </name><val> A * Loop.Mult * StomachParms.JMaxMult </val></def>
+<def><name> Active </name><val> Alpha * Mass / ( Mass + ( StomachParms.bMult * b ) )  </val></def>
+
+   <def>
+	<name> Absorption </name> 
+	<val> ( Mass *  c * StomachParms.cMult + Active ) MIN Mass </val>
+   </def>
+
+   <def><name> Change </name><val>  - Absorption </val></def>
+
+
+ <if>
+ <test> Loop.TestLoad GT 0 </test>
+   <true>
+   <def><name> Abs </name><val> Loop.TestLoad - Mass </val></def>
+   <def><name> FracMass </name><val> Abs / Loop.TestLoad </val></def>
+   <def><name> Abs% </name><val> Mass / Loop.TestLoad </val></def> 
+  </true>
+   <false>
+   <def><name> Abs </name><val> 0 </val></def>
+   <def><name> FracMass </name><val> 0 </val></def>
+   <def><name> Abs% </name><val> 0 </val></def> 
+   </false>
+  </if>
+
+ </block>
+
+
+</definitions>  
+
+</structure>                                                                                                                                                  
+   
+                                                                               

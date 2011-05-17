@@ -1,0 +1,36 @@
+ HumMod / Bolus
+
+Created : 1-Nov-10
+Last Modified : 1-Nov-10
+Author : W Pruett
+Copyright : 2010-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 
+
+
+<structurename> Loop </structurename>
+
+<groupbox>
+   <row> 15.0 </row>
+   <col> 51.0 </col>
+   <high> 5 </high>
+   <wide> 37.0 </wide>
+   <title> Experiment </title>
+
+<editbox>
+  <row> 1 </row><col> 1 </col>
+  <name> Load </name>
+  <label> Load (mg) </label>
+</editbox>
+
+</groupbox>
+
+
+
+
+
+End
+                                     
+ 
+                      
