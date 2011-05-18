@@ -13,10 +13,16 @@ Solver : Digital Human (V1.0)
 
 <showclock>
    <row> 0.5 </row><col> 36 </col>
-   <name> System.X </name>
+   <name> StomachParms.AgeMinutes </name>
    <ampm/>
    <days/>
 </showclock>
+
+<showvalue>
+   <row> .5 </row><col> 55 </col>
+   <name> StomachParms.AgeDays </name>
+ </showvalue>
+
 
 
 <showpanelname>
@@ -29,6 +35,7 @@ Solver : Digital Human (V1.0)
 <?include NewGut.DES ?>
 <?include NewAUC.DES ?>
 <?include Loop.DES ?>
+<?include Traits.DES ?>
 
 </panel>
 

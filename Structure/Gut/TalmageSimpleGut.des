@@ -9,7 +9,6 @@ Schema : DES V1.0
   
 <?path Structure/Gut ?>
 
-<?include Stomach.DES ?>
 <?include StomachParms.DES ?>
 <?include Duodenum.DES ?>                                                                  
 <?include Jejunum.DES ?>

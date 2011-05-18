@@ -15,15 +15,6 @@ Solver : Digital Human (V1.0)
    <title> Gut Overview </title>
 
  <showvalue>
-   <row> 1 </row><col> 1.0 </col>
-
-   <name> Stomach.Mass </name>
-   <format><decimal> 4 </decimal></format>
-   <label> Stomach mass </label>
-
- </showvalue>
-
- <showvalue>
    <row> 2 </row><col> 1.0 </col>
 
    <name> Duodenum.Mass </name>

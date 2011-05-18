@@ -6,7 +6,7 @@ Author : Tom Coleman
 Copyright : 2008-2010
 By : University of Mississippi Medical Center
 
-<?path C:\Users\Drew\Desktop\Loop_Model\Structure ?>
+<?path Structure ?>
 
 <?include Gut\TalmageSimpleGut.DES ?>
 <?include Gut\Loop.DES ?>
@@ -20,14 +20,15 @@ By : University of Mississippi Medical Center
 <block>
   <name> Parms </name>
   <call> Loop.Parms </call>
-  <call> Stomach.Parms </call>
+  <call> StomachParms.Parms </call>
   <call> TalmageVitD.Parms </call>
 </block>
 
 
 <block>
   <name> Dervs </name>
-  <call> Stomach.Dervs </call>
+  <call> StomachParms.Dervs </call>
+  <call> Loop.Dervs </call>
   <call> Duodenum.Dervs </call>
   <call> Jejunum.Dervs </call>
   <call> Ilium.Dervs </call>

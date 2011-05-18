@@ -11,32 +11,21 @@ Schema : DES V1.0
 
 <variables>
 
-<!-- active factors -->
   <var><name> AbsFrac </name></var>
   <var><name> Alpha </name></var>
   <parm><name> DuodMult </name><val>1</val></parm>
-  <parm><name> A </name><val> .180723 </val></parm>.0193
-  <parm><name> b </name><val> .03 </val></parm>
-  <parm><name> S </name><val> .35 </val></parm>.84
-  <parm><name> n </name><val> .9 </val></parm>
+  <parm><name> A </name><val> .0033 </val></parm>.0193
+  <parm><name> b </name><val> .04 </val></parm>
   <parm><name> c </name><val> .00300  </val></parm> <!-- fit from berkeley madonna -->
-
-<!-- Total effect -->
   <var><name> Absorption </name></var>
-
   <var><name> FracMass </name></var>
- 
   <var><name> Abs </name></var>
   <var><name> Abs% </name></var>
   <var><name> Active </name></var>
-  <parm><name> Washout </name><val> .2 </val></parm>
-
 
 </variables>
 
 <equations>
-
-
  <diffeq>
   <name> Mass </name>  
      <integralname> Mass </integralname>
@@ -44,8 +33,6 @@ Schema : DES V1.0
      <dervname> Change </dervname>
      <errorlim> .000001 </errorlim>
  </diffeq>
-
-
 </equations>
 
 
@@ -54,17 +41,10 @@ Schema : DES V1.0
  <block>
  <name>Dervs </name>
  
- <def><name> Alpha </name><val> A * Loop.Mult </val></def>
-<def><name> Active </name><val> Alpha * ( 1 - EXP ( - b * ( Mass ^ n ) / ( ( Mass ^ n ) + ( S ^ n ) ) ) )</val></def>
-
-   <def>
-	<name> Absorption </name> 
-	<val> ( Mass *  c + Active ) MIN Mass </val>
-   </def>
-
-   <def><name> Change </name><val>  - Absorption </val></def>
-
-
+ <def><name> Alpha </name><val> A * Loop.Mult * StomachParms.JMaxMult </val></def>
+ <def><name> Active </name><val> Alpha * Mass / ( Mass + ( StomachParms.bMult * b ) )  </val></def>
+ <def><name> Absorption </name> <val> ( Mass *  c * StomachParms.cMult + Active ) MIN Mass </val></def>
+ <def><name> Change </name><val>  - Absorption </val></def>
  <if>
  <test> Loop.TestLoad GT 0 </test>
    <true>
@@ -78,12 +58,9 @@ Schema : DES V1.0
    <def><name> Abs% </name><val> 0 </val></def> 
    </false>
   </if>
-
  </block>
 
-
 </definitions>  
-
 </structure>                                                                                                                                                  
    
                                                                                
