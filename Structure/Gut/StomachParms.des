@@ -28,41 +28,39 @@ Schema : DES V1.0
 
 
 <definitions>
+
 <block>
 <name> Parms</name>
-<def><name> StartAgeMinutes </name><val> StartAgeDays * 1440 </val></def>
-<def><name> AgeDays </name><val> StartAgeDays </val></def>
 
-<testcase>
- <case>
-   <test> AgeDays LT 60 </test>
-   <def><name> Weight </name><val> 5 * AgeDays  - 72 </val></def>
- </case>
- <case>
-   <test>AgeDays LT 110 </test>
-   <def><name> Weight </name><val> 2.5 * AgeDays  + 75 </val></def>
- </case>
- <case> 
-   <test> TRUE </test>
-   <def><name> Weight </name><val> .6 * AgeDays + 282 </val></def>
- </case>
-</testcase>
-
-<def><name> DailyCa </name><val> Consumption * Weight * DietaryCa% * 10 </val></def>
-<def><name> DailyD </name><val> Consumption * Weight * DietaryDIU </val></def>
-
-<def><name>CaBD</name><val> 144 - ( 2.354 * DailyD ) - ( 651 / ( 1 + DailyD ) ) - ( .00144 * DailyCa ) + ( 298 / ( 1 + DailyCa ) )</val></def>
-
+  <def><name> StartAgeMinutes </name><val> StartAgeDays * 1440 </val></def>
+  <def><name> AgeDays </name><val> StartAgeDays </val></def>
+  <testcase>
+   <case>
+     <test> AgeDays LT 60 </test>
+     <def><name> Weight </name><val> 5 * AgeDays  - 72 </val></def>
+   </case>
+   <case>
+     <test>AgeDays LT 110 </test>
+     <def><name> Weight </name><val> 2.5 * AgeDays  + 75 </val></def>
+   </case>
+   <case> 
+     <test> TRUE </test>
+     <def><name> Weight </name><val> .6 * AgeDays + 282 </val></def>
+   </case>
+  </testcase>
+  <def><name> DailyCa </name><val> Consumption * Weight * DietaryCa% * 10 </val></def>
+  <def><name> DailyD </name><val> Consumption * Weight * DietaryDIU </val></def>
+  <def><name>CaBD</name><val> -60 + ( 20 * DailyD / (DailyD + 50 ) ) + ( 3.68 * DailyD / ( DailyCa + .005 ) ) + ( 5119 / ( 20 + AgeDays ) ) </val></def>
 </block>
 
 <block>
 <name> Dervs</name>
 
-<def><name> AgeMinutes</name><val> StartAgeMinutes + System.X </val></def>
-<def><name> AgeDays </name><val> ROUND ( AgeMinutes / 1440 )</val></def>
-<def><name> cMult </name><val> ( 1.6 - ( ( .6 / 20 ) * AgeDays ) ) MAX 1 </val></def>
-<def><name>JMaxMult</name><val> .043 * CaBD - .0824 </val></def><!--Pansu et al; normalized for predicted levels in fig 1 of Brnner, Pansu, Stein "Analysis"-->
-<def><name>bMult</name><val> SQRT ABS JMaxMult </val></def>
+  <def><name> AgeMinutes</name><val> StartAgeMinutes + System.X </val></def> 
+  <def><name> AgeDays </name><val> ROUND ( AgeMinutes / 1440 )</val></def>
+  <def><name> cMult </name><val> ( 1.6 - ( ( .6 / 20 ) * AgeDays ) ) MAX 1 </val></def>
+  <def><name>JMaxMult</name><val> .043 * CaBD - .0824 </val></def><!--Pansu et al; normalized for predicted levels in fig 1 of Brnner, Pansu, Stein "Analysis"-->
+  <def><name>bMult</name><val> SQRT ABS JMaxMult </val></def>
 </block>
 
 </definitions>

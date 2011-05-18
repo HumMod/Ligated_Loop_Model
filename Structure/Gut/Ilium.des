@@ -14,7 +14,7 @@ Schema : DES V1.0
 <!-- active factors -->
   <var><name> AbsFrac </name></var>
 
-  <parm><name> c </name><val> .0031  </val></parm>.185
+  <parm><name> c </name><val> .00300  </val></parm>.185
 
 
 <!-- Total effect -->
@@ -42,9 +42,8 @@ Schema : DES V1.0
  <block>
  <name>Dervs </name>
 
-   <def><name> Absorption </name><val> Mass * c * StomachParms.cMult </val></def>
-   <def><name> Change </name><val> - Absorption </val></def>
-
+ <def><name> Absorption </name><val> Mass * c * StomachParms.cMult </val></def>
+ <def><name> Change </name><val> - Absorption </val></def>
  <if>
  <test> Loop.TestLoad GT 0 </test>
    <true>
@@ -56,14 +55,9 @@ Schema : DES V1.0
    <def><name> FracMass </name><val> 0 </val></def>
    </false>
   </if>
-
-
-
  </block>
 
-
 </definitions>  
-
 </structure>                                                                                                                                                  
    
                                                                                
